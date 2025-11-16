@@ -11,6 +11,10 @@ class Note:
     updated_at: datetime
     id: Optional[int] = None
 
+    def create(self):
+        self.created_at = datetime.now()
+        self.updated_at = datetime.now()
+
     def update(self, title: str, content: str):
         self.title = title
         self.content = content

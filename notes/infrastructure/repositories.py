@@ -29,4 +29,4 @@ class NoteRepository(NoteRepositoryInterface):
             note_model = NoteModel.objects.get(id=note_id)
             note_model.delete()
         except NoteModel.DoesNotExist:
-            pass  # Ou levantar uma exceção específica, dependendo da regra de negócio
+            pass

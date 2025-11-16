@@ -1,3 +1,4 @@
+from datetime import datetime
 from typing import List, Optional
 from notes.infrastructure.repositories import NoteRepository
 from notes.domain import NoteEntity, NoteRepositoryInterface
@@ -8,7 +9,8 @@ class NoteUseCases:
         self.note_repository = note_repository
 
     def create(self, title: str, content: str) -> NoteEntity:
-        note = NoteEntity(title=title, content=content)
+        now = datetime.now()
+        note = NoteEntity(title=title, content=content, created_at=now, updated_at=now)
         return self.note_repository.create(note)
 
     def get(self, note_id: int) -> Optional[NoteEntity]:

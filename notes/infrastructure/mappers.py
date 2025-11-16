@@ -23,7 +23,6 @@ def to_model(note_entity: NoteEntity) -> NoteModel:
         note_model = NoteModel()
 
     note_model.title = note_entity.title
-    model.title = note_entity.title
-    model.content = note_entity.content
+    note_model.content = note_entity.content
 
-    return model
+    return note_model
